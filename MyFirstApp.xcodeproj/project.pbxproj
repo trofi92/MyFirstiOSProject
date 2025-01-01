@@ -13,6 +13,7 @@
 		F81C03972D250B110058A789 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F81C03962D250B110058A789 /* Base */; };
 		F81C03992D250B120058A789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F81C03982D250B120058A789 /* Assets.xcassets */; };
 		F81C039C2D250B120058A789 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F81C039B2D250B120058A789 /* Base */; };
+		F81C03A52D250E3C0058A789 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = F81C03A42D250E3C0058A789 /* Inject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F81C03A52D250E3C0058A789 /* Inject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = MyFirstApp;
+			packageProductDependencies = (
+				F81C03A42D250E3C0058A789 /* Inject */,
+			);
 			productName = MyFirstApp;
 			productReference = F81C038C2D250B110058A789 /* MyFirstApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = F81C03832D250B110058A789;
+			packageReferences = (
+				F81C03A32D250E3C0058A789 /* XCRemoteSwiftPackageReference "Inject" */,
+			);
 			productRefGroup = F81C038D2D250B110058A789 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -304,6 +312,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-Xfrontend -enable-dynamic-replacement-chaining";
 				PRODUCT_BUNDLE_IDENTIFIER = SeYeongEom.MyFirstApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -361,6 +374,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F81C03A32D250E3C0058A789 /* XCRemoteSwiftPackageReference "Inject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F81C03A42D250E3C0058A789 /* Inject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F81C03A32D250E3C0058A789 /* XCRemoteSwiftPackageReference "Inject" */;
+			productName = Inject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F81C03842D250B110058A789 /* Project object */;
 }
