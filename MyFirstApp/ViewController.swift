@@ -8,21 +8,23 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var lblHello: UILabel!
+    @IBOutlet var txtName: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let newView = UIView(frame: CGRect(x:100,y: 100,width: 100,height: 100))
-        newView.backgroundColor = UIColor.green
-        self.view.addSubview(newView)
-        
-        let newLb = UILabel(frame: CGRect(x: 100, y: 0, width: 100, height: 100))
-        newLb.text = "this is test code"
-        newLb.textColor = .gray
-        newView.addSubview(newLb)
-        
-        let newImgV = UIImageView(frame: CGRect(x: 5, y: 5, width: 90, height: 90))
-        newImgV.image = UIImage(named: "img.png")
-        newImgV.contentMode = .scaleAspectFit
-        newView.addSubview(newImgV)
+//        let newView = UIView(frame: CGRect(x:100,y: 100,width: 100,height: 100))
+//        newView.backgroundColor = UIColor.green
+//        self.view.addSubview(newView)
+//        
+//        let newLb = UILabel(frame: CGRect(x: 100, y: 0, width: 100, height: 100))
+//        newLb.text = "this is test code"
+//        newLb.textColor = .gray
+//        newView.addSubview(newLb)
+//        
+//        let newImgV = UIImageView(frame: CGRect(x: 5, y: 5, width: 90, height: 90))
+//        newImgV.image = UIImage(named: "img.png")
+//        newImgV.contentMode = .scaleAspectFit
+//        newView.addSubview(newImgV)
 //        self.view.backgroundColor = .blue
 //        let label = UILabel()
 //        label.translatesAutoresizingMaskIntoConstraints = false
@@ -36,5 +38,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func btnSend(_ sender: UIButton) {
+        lblHello.text = "Hello, " + txtName.text!
+    }
 }
 
