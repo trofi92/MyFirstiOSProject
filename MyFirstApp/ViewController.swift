@@ -8,38 +8,52 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var isZoom = false
+    var imgOn: UIImage?
+    var imgOff: UIImage?
+    
+    @IBOutlet var imgView: UIImageView!
+    @IBOutlet var btnResize: UIButton!
+    
     @IBOutlet var lblHello: UILabel!
     @IBOutlet var txtName: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let newView = UIView(frame: CGRect(x:100,y: 100,width: 100,height: 100))
-//        newView.backgroundColor = UIColor.green
-//        self.view.addSubview(newView)
-//        
-//        let newLb = UILabel(frame: CGRect(x: 100, y: 0, width: 100, height: 100))
-//        newLb.text = "this is test code"
-//        newLb.textColor = .gray
-//        newView.addSubview(newLb)
-//        
-//        let newImgV = UIImageView(frame: CGRect(x: 5, y: 5, width: 90, height: 90))
-//        newImgV.image = UIImage(named: "img.png")
-//        newImgV.contentMode = .scaleAspectFit
-//        newView.addSubview(newImgV)
-//        self.view.backgroundColor = .blue
-//        let label = UILabel()
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.text = "Hello Swift!"
-//        label.textColor = .white
-//        self.view.addSubview(label)
-//        NSLayoutConstraint.activate([
-//            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-//        ])
-        // Do any additional setup after loading the view.
+        imgOn = UIImage(named: "lamp_on.png")
+        imgOff = UIImage(named: "lamp_off.png")
+        
+        imgView.image = imgOn
     }
     
-    @IBAction func btnSend(_ sender: UIButton) {
+    
+        @IBAction func btnSend(_ sender: UIButton) {
         lblHello.text = "Hello, " + txtName.text!
     }
+    
+    
+    @IBAction func btnResizeImage(_ sender: UIButton) {
+        let scale:CGFloat = 2.0
+        var newWidth:CGFloat, newHeight:CGFloat
+        if (isZoom) {
+            newWidth = imgView.frame.width/scale
+            newHeight = imgView.frame.height/scale
+            btnResize.setTitle("확대", for: .normal)
+        } else {
+            newWidth = imgView.frame.width*scale
+            newHeight = imgView.frame.height*scale
+            btnResize.setTitle("축소", for: .normal)
+        }
+        imgView.frame.size = CGSize(width: newWidth, height: newHeight)
+        isZoom = !isZoom
+    }
+    
+    @IBAction func switchImageOnOff(_ sender: UISwitch) {
+        if (sender.isOn) {
+            imgView.image = imgOn
+        } else {
+            imgView.image = imgOff
+        }
+    }
+    
 }
 

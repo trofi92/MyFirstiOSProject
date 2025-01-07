@@ -14,6 +14,8 @@
 		F81C03992D250B120058A789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F81C03982D250B120058A789 /* Assets.xcassets */; };
 		F81C039C2D250B120058A789 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F81C039B2D250B120058A789 /* Base */; };
 		F81C03A52D250E3C0058A789 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = F81C03A42D250E3C0058A789 /* Inject */; };
+		F87750DC2D2D6BAE00B9FBA5 /* lamp_off.png in Resources */ = {isa = PBXBuildFile; fileRef = F87750DA2D2D6BAE00B9FBA5 /* lamp_off.png */; };
+		F87750DE2D2D6D5300B9FBA5 /* lamp_on.png in Resources */ = {isa = PBXBuildFile; fileRef = F87750DD2D2D6D5300B9FBA5 /* lamp_on.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		F81C03982D250B120058A789 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F81C039B2D250B120058A789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F81C039D2D250B120058A789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F87750DA2D2D6BAE00B9FBA5 /* lamp_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lamp_off.png; sourceTree = "<group>"; };
+		F87750DD2D2D6D5300B9FBA5 /* lamp_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lamp_on.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				F81C038F2D250B110058A789 /* AppDelegate.swift */,
 				F81C03912D250B110058A789 /* SceneDelegate.swift */,
 				F81C03932D250B110058A789 /* ViewController.swift */,
+				F87750DA2D2D6BAE00B9FBA5 /* lamp_off.png */,
+				F87750DD2D2D6D5300B9FBA5 /* lamp_on.png */,
 				F81C03952D250B110058A789 /* Main.storyboard */,
 				F81C03982D250B120058A789 /* Assets.xcassets */,
 				F81C039A2D250B120058A789 /* LaunchScreen.storyboard */,
@@ -134,6 +140,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F81C03992D250B120058A789 /* Assets.xcassets in Resources */,
+				F87750DC2D2D6BAE00B9FBA5 /* lamp_off.png in Resources */,
+				F87750DE2D2D6D5300B9FBA5 /* lamp_on.png in Resources */,
 				F81C039C2D250B120058A789 /* Base in Resources */,
 				F81C03972D250B110058A789 /* Base in Resources */,
 			);
